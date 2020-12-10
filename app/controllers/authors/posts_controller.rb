@@ -1,4 +1,5 @@
-class PostsController < ApplicationController
+module Authors
+class PostsController < AuthorsController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -54,5 +55,6 @@ class PostsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def post_params
       params.require(:post).permit(:title, :description, :published, :published_at, :author_id)
+    end
     end
 end
